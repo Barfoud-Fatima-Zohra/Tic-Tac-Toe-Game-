@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explication de l'Algorithme Minimax</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #0056b3;
+        }
+
+        .example-board {
+            display: grid;
+            grid-template-columns: repeat(3, 50px);
+            grid-template-rows: repeat(3, 50px);
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Explication de l'Algorithme Minimax</h1>
+
+    <h2>Algorithme Minimax</h2>
+    <p>L'algorithme Minimax est utilisé pour prendre des décisions optimales dans des jeux à somme nulle comme le
+        Tic-Tac-Toe. Il permet de minimiser la perte maximale possible pour un joueur (ou de maximiser le gain minimal).
+    </p>
+
+    <h2>Fonctionnement du Minimax</h2>
+    <p>Dans Minimax, il y a deux types de joueurs :</p>
+    <ul>
+        <li><strong>Maximizing Player (Max)</strong> : L'IA, dont le but est de maximiser le score.</li>
+        <li><strong>Minimizing Player (Min)</strong> : L'adversaire (humain), dont le but est de minimiser le score.
+        </li>
+    </ul>
+
+    <h2>Signification des Scores</h2>
+    <p>Les scores utilisés dans l'algorithme Minimax sont :</p>
+    <ul>
+        <li><strong>10</strong> : Victoire de l'IA.</li>
+        <li><strong>-10</strong> : Victoire de l'humain.</li>
+        <li><strong>0</strong> : Match nul.</li>
+    </ul>
+
+    <h2>Déroulement du Minimax</h2>
+    <p>Lorsque l'algorithme évalue une position :</p>
+    <ul>
+        <li><strong>Si l'IA gagne</strong> : Retourne un score de <code>10 - profondeur</code>.</li>
+        <li><strong>Si l'humain gagne</strong> : Retourne un score de <code>profondeur - 10</code>.</li>
+        <li><strong>Match nul</strong> : Retourne <code>0</code>.</li>
+    </ul>
+
+    <h2>Exemple Simplifié</h2>
+    <p>Considérons l'état suivant du plateau :</p>
+    <div class="example-board">
+        <div class="cell">X</div>
+        <div class="cell">O</div>
+        <div class="cell">X</div>
+        <div class="cell">O</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell">O</div>
+    </div>
+
+    <h3>Étape 1 : Identifier les coups possibles</h3>
+    <p>Les coups possibles sont : 5, 7, 8.</p>
+
+    <h3>Étape 2 : Évaluer chaque coup avec Minimax</h3>
+    <p>Pour chaque coup possible, l'algorithme Minimax simule le jeu jusqu'à la fin :</p>
+
+    <h4>Mouvement 5</h4>
+    <div class="example-board">
+        <div class="cell">X</div>
+        <div class="cell">O</div>
+        <div class="cell">X</div>
+        <div class="cell">O</div>
+        <div class="cell">X</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell">O</div>
+    </div>
+    <p>Si l'humain joue ensuite :</p>
+    <ul>
+        <li>En 7 : Match nul (score = 0).</li>
+        <li>En 8 : L'humain gagne (score = -8).</li>
+    </ul>
+    <p>Score moyen pour le mouvement 5 : -4.</p>
+
+    <h4>Mouvement 7</h4>
+    <div class="example-board">
+        <div class="cell">X</div>
+        <div class="cell">O</div>
+        <div class="cell">X</div>
+        <div class="cell">O</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell">X</div>
+        <div class="cell"></div>
+        <div class="cell">O</div>
+    </div>
+    <p>L'IA gagne immédiatement avec une diagonale. Score = 9.</p>
+
+    <h4>Mouvement 8</h4>
+    <div class="example-board">
+        <div class="cell">X</div>
+        <div class="cell">O</div>
+        <div class="cell">X</div>
+        <div class="cell">O</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell">X</div>
+        <div class="cell">O</div>
+    </div>
+    <p>Si l'humain joue ensuite :</p>
+    <ul>
+        <li>En 5 : L'IA gagne (score = 8).</li>
+        <li>En 7 : Match nul (score = 0).</li>
+    </ul>
+    <p>Score moyen pour le mouvement 8 : 4.</p>
+
+    <h3>Conclusion</h3>
+    <p>L'IA choisit le mouvement 7 car il offre le score le plus élevé (9) et garantit une victoire immédiate.</p>
+
+</body>
+
+</html>

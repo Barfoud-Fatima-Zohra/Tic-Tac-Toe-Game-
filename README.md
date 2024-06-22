@@ -42,10 +42,3 @@ L'objectif de l'algorithme Minimax est de garantir que l'ordinateur joue de mani
 1. Clonez ce dépôt ou téléchargez les fichiers sources.
 2. Ouvrez le fichier `index.html` dans votre navigateur préféré pour lancer le jeu.
 
-## Auteurs
-
-Ce projet a été réalisé par un groupe d'étudiants de Master ILSI - Faculté des Sciences et Techniques Errachidia (FSTE) :
-
-- [Barfoud Fatima Zohra]
-- [Bahafid Zineb]
-- [Bouchkara Ikrame]
